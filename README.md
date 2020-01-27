@@ -1,2 +1,2 @@
 # aoc-2016
-Advent of Code 2016 (Python)
+My solutions for Advent of Code 2016 written in Python.
