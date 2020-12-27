@@ -68,30 +68,31 @@ length_b = 35651584
 start_time = timer()
 print(calculate_checksum(puzzle_input, length_a))
 end_time = timer()
-print("Took {} seconds.".format(end_time - start_time))
+#print("Took {} seconds.".format(end_time - start_time))
 
 
 start_time = timer()
 print(calculate_checksum(puzzle_input, length_b))
 end_time = timer()
-print("Took {} seconds.".format(end_time - start_time))
+#print("Took {} seconds.".format(end_time - start_time))
 
 
 # Naive Solution
-start_time = timer()
-current = puzzle_input
-length = length_b
-while len(current) < length:
-    b = current[::-1]
-    current += "0" + "".join(map(lambda x: "1" if x == "0" else "0", b))
+def solve_old():
+    start_time = timer()
+    current = puzzle_input
+    length = length_b
+    while len(current) < length:
+        b = current[::-1]
+        current += "0" + "".join(map(lambda x: "1" if x == "0" else "0", b))
 
-data = current[:length]
-checksum = None
-while checksum is None or len(checksum) % 2 == 0:
-    pairs = re.findall(r'.{2}', data)
-    checksum = "".join(map(lambda x: "1" if x[0] == x[1] else "0", pairs))
-    data = checksum
+    data = current[:length]
+    checksum = None
+    while checksum is None or len(checksum) % 2 == 0:
+        pairs = re.findall(r'.{2}', data)
+        checksum = "".join(map(lambda x: "1" if x[0] == x[1] else "0", pairs))
+        data = checksum
 
-print(checksum)
-end_time = timer()
-print("Took {} seconds.".format(end_time - start_time))
+    print(checksum)
+    end_time = timer()
+    print("Took {} seconds.".format(end_time - start_time))

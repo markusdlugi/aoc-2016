@@ -19,6 +19,10 @@ for r in range(400000 - 1):
     row.append(False)
     prev = row
 
+    # Part A
+    if r == 40 - 2:
+        print(safe_count)
+
 print(safe_count)
 end_time = timer()
 print("Took {} seconds.".format(end_time - start_time))

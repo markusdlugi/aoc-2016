@@ -106,7 +106,7 @@ for i, line in enumerate(open("input/11.txt")):
 start_time = time.time()
 print(find_smallest_steps(floors))
 end_time = time.time()
-print("Took {} seconds.".format(str(end_time - start_time)))
+#print("Took {} seconds.".format(str(end_time - start_time)))
 
 # Part B
 floors[0]["generators"].update(["elerium", "dilithium"])
@@ -115,4 +115,4 @@ floors[0]["microchips"].update(["elerium", "dilithium"])
 start_time = time.time()
 print(find_smallest_steps(floors))
 end_time = time.time()
-print("Took {} seconds.".format(str(end_time - start_time)))
+#print("Took {} seconds.".format(str(end_time - start_time)))

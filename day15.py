@@ -33,27 +33,28 @@ for i, line in enumerate(open("input/15.txt")):
 start_time = timer()
 print(chinese_remainder(modulos))
 end_time = timer()
-print("Took {} seconds.\n".format(end_time - start_time))
+#print("Took {} seconds.\n".format(end_time - start_time))
 
 # Part B
 modulos.append((11, 11 - len(modulos) - 1))
 start_time = timer()
 print(chinese_remainder(modulos))
 end_time = timer()
-print("Took {} seconds.\n".format(end_time - start_time))
+#print("Took {} seconds.\n".format(end_time - start_time))
 
 
 # Brute Force Solution
-start_time = timer()
-current_time = 0
-while True:
-    for m, a in modulos:
-        if current_time % m != a:
+def solve_old():
+    start_time = timer()
+    current_time = 0
+    while True:
+        for m, a in modulos:
+            if current_time % m != a:
+                break
+        else:
             break
-    else:
-        break
-    current_time += 1
+        current_time += 1
 
-print(current_time)
-end_time = timer()
-print("Took {} seconds.\n".format(end_time - start_time))
+    print(current_time)
+    end_time = timer()
+    print("Took {} seconds.\n".format(end_time - start_time))

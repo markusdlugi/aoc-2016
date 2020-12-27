@@ -55,7 +55,7 @@ for disk_a, disk_b in combinations(disks, 2):
         pairs += 1
 print(pairs)
 end_time = timer()
-print("Took {} seconds".format((end_time - start_time)))
+#print("Took {} seconds".format((end_time - start_time)))
 
 
 # Part B
@@ -86,4 +86,4 @@ while queue:
 x_dist = max_xy[0] - 1
 print(steps + (x_dist * 5) + 1)
 end_time = timer()
-print("Took {} seconds".format((end_time - start_time)))
+#print("Took {} seconds".format((end_time - start_time)))
